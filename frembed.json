@@ -1,0 +1,17 @@
+{
+    "sourceName": "AnimePahe Test",
+    "iconUrl": "https://i.pinimg.com/236x/83/e5/7e/83e57efca05aabcecb48cb9151080abf.jpg",
+    "author": {
+        "name": "Churly",
+        "icon": "https://i.pinimg.com/236x/83/e5/7e/83e57efca05aabcecb48cb9151080abf.jpg"
+    },
+    "version": "1.0.0",
+    "language": "English",
+    "streamType": "HLS",
+    "quality": "1080p",
+    "baseUrl": "https://heatherwholeinvolve.com/",
+    "searchBaseUrl": "https://frembed.xyz/api/public/search?query=%s",
+    "scriptUrl": "https://raw.githubusercontent.com/Ylruhc/AnimePaheTest/refs/heads/main/frembed.js",
+    "type": "shows",
+    "asyncJS": true
+}

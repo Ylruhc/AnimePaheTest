@@ -1,7 +1,7 @@
 async function searchResults(keyword) {
     try {
         const encodedKeyword = encodeURIComponent(keyword);
-        const responseText = await fetchv2(`https://frembed.xyz/api/public/search?query=${encodedKeyword}`);
+        const responseText = await fetchv3(`https://frembed.xyz/api/public/search?query=${encodedKeyword}`);
         //const data = JSON.parse(responseText);
         const data = await responseText.json();
         
@@ -29,7 +29,7 @@ async function searchResults(keyword) {
 
 async function extractDetails(showId) {
     try {
-        const responseText = await fetchv2(`https://frembed.xyz/api/public/tv-show/${showId}`);
+        const responseText = await fetchv3(`https://frembed.xyz/api/public/tv-show/${showId}`);
         //const data = JSON.parse(responseText);
         const data = await responseText.json();
 
@@ -50,7 +50,7 @@ async function extractDetails(showId) {
 
 async function extractEpisodes(showId) {
     try {
-        const responseText = await fetchv2(`https://frembed.xyz/api/public/tv-show/${showId}/listep`);
+        const responseText = await fetchv3(`https://frembed.xyz/api/public/tv-show/${showId}/listep`);
         //const data = JSON.parse(responseText);
         const data = await responseText.json();
 
@@ -78,13 +78,13 @@ async function extractStreamUrl(url) {
             'Accept': 'application/json'
         };
 
-        const responseText = await fetchv2(`https://frembed.xyz/api/series?${url}&idType=tmdb`, headers);
+        const responseText = await fetchv3(`https://frembed.xyz/api/series?${url}&idType=tmdb`, headers);
 
         const data = await responseText.json();
         const embedUrl = data.link3;
         const newEmbedUrl = embedUrl.replace("https://maxfinishseveral.com/e/", "https://heatherwholeinvolve.com/e/");
         console.log(newEmbedUrl);
-        const response = await fetchv2(newEmbedUrl);
+        const response = await fetchv3(newEmbedUrl);
         const html = await response.text();
         const scriptMatch = html.match(/var\s+sources\s*=\s*({.*?});/s);
         if (scriptMatch) {
